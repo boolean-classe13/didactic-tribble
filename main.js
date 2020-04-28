@@ -62,6 +62,8 @@ function is_mine(numero, mine) {
 // funzione che genera n numeri random uno diverso dall'altro in un array
 function mine_generator(n, min, max) {
     var mine = [];
+
+    // procedimento A
     // ripeto 16 volte => genero 16 numeri
     for (var i = 0; i < n; i++) {
         // ciclo per verificare che i numeri siano diversi
@@ -73,12 +75,13 @@ function mine_generator(n, min, max) {
         mine.push(numero_random);
     }
 
-    do {
-        var numero_random = Math.floor(Math.random() * (max - min + 1)) + min;
-        if(mine.includes(numero_random) == false) {
-            mine.push(numero_random)
-        } 
-    } while (mine.length < 16);
+    // // procedimento B
+    // do {
+    //     var numero_random = Math.floor(Math.random() * (max - min + 1)) + min;
+    //     if(mine.includes(numero_random) == false) {
+    //         mine.push(numero_random)
+    //     }
+    // } while (mine.length < 16);
 
     // restituisco l'array con le 16 mine
     return mine;
